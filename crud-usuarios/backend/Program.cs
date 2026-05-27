@@ -1,17 +1,27 @@
+using Scalar.AspNetCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
+builder.Services.AddOpenApi();
+
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("frontend", policy =>
+    options.AddPolicy("AllowFrontend", policy =>
+    {
         policy.WithOrigins("http://localhost:3000")
               .AllowAnyHeader()
-              .AllowAnyMethod());
+              .AllowAnyMethod();
+    });
 });
 
 var app = builder.Build();
 
-app.UseCors("frontend");
+app.MapOpenApi();
+app.MapScalarApiReference();
+
+app.UseCors("AllowFrontend");
+app.UseAuthorization();
 app.MapControllers();
 
 app.Run();

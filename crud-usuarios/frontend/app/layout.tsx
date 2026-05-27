@@ -1,20 +1,20 @@
-// app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "CRUD de Usuários — IFAC",
-  description: "Gerenciador de usuários com backend C# e frontend Next.js",
+  title: "IFAC — Supervisão Industrial",
+  description: "Sistema de supervisão industrial",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
-      <body className="antialiased">{children}</body>
+      <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+      </head>
+      <body style={{ margin: 0, background: "#0d0d14", fontFamily: "sans-serif" }}>
+        {children}
+      </body>
     </html>
   );
 }
