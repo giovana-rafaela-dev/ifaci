@@ -1,0 +1,18 @@
+
+> my-app@0.1.0 dev
+> next dev --port 3000
+
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://10.109.3.76:3000
+- Environments: .env.local
+
+✓ Starting...
+Creating turbopack project {
+  dir: 'C:\\Users\\Tobias\\Desktop\\ProjGabrielFinalSem\\frontend\\my-app',
+  testMode: true
+}
+✓ Ready in 15.3s
+○ Compiling / ...
+ GET / 200 in 6.5s (compile: 5.8s, render: 615ms)
+[?25h
